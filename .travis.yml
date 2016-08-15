@@ -1,0 +1,13 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+
+dependencies:
+    override:
+        - npm install
+        - npm install ava -g
+
+node_js:
+  - '6.1'
+  - '5.9'
