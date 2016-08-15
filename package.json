@@ -1,0 +1,22 @@
+{
+  "name": "@bubltechnology/customizable-commit-analyzer",
+  "version": "1.0.0",
+  "description": "Customizable commit message analyzer for use with semantic-release",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava tests/"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "semantic-release",
+    "commitizen",
+    "semver"
+  ],
+  "devDependencies": {
+    "ava": "^0.15.2"
+  },
+  "author": "Bubl Technology Ltd",
+  "license": "Apache-2.0"
+}
