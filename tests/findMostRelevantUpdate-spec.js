@@ -1,7 +1,7 @@
 const test = require('ava')
 const findMostRelevantUpdate = require('../lib/findMostRelevantUpdate')
 
-test.only('findMostRelevantUpdate - feat', (t) => {
+test('findMostRelevantUpdate - feat', (t) => {
   const fakeCommits = [
     {
       message: 'feat(boom): something changed'
@@ -12,7 +12,7 @@ test.only('findMostRelevantUpdate - feat', (t) => {
   t.is(findMostRelevantUpdate(fakeCommits), 'minor')
 })
 
-test.only('findMostRelevantUpdate - docs', (t) => {
+test('findMostRelevantUpdate - docs', (t) => {
   const fakeCommits = [
     {
       message: 'some poorly formatted commit message'
@@ -25,7 +25,7 @@ test.only('findMostRelevantUpdate - docs', (t) => {
   t.is(findMostRelevantUpdate(fakeCommits), 'patch')
 })
 
-test.only('findMostRelevantUpdate - docs', (t) => {
+test('findMostRelevantUpdate - docs -- custom', (t) => {
   const fakeCommits = [
     {
       message: 'some poorly formatted commit message'
@@ -38,7 +38,7 @@ test.only('findMostRelevantUpdate - docs', (t) => {
   t.is(findMostRelevantUpdate(fakeCommits, { docs: null }), null)
 })
 
-test.only('findMostRelevantUpdate - fix', (t) => {
+test('findMostRelevantUpdate - fix', (t) => {
   const fakeCommits = [
     {
       message: 'fix(code): less bugs in the code'
@@ -51,7 +51,7 @@ test.only('findMostRelevantUpdate - fix', (t) => {
   t.is(findMostRelevantUpdate(fakeCommits), 'patch')
 })
 
-test.only('findMostRelevantUpdate - refactor', (t) => {
+test('findMostRelevantUpdate - refactor', (t) => {
   const fakeCommits = [
     {
       message: 'more bugs in the code'
@@ -64,7 +64,7 @@ test.only('findMostRelevantUpdate - refactor', (t) => {
   t.is(findMostRelevantUpdate(fakeCommits), 'patch')
 })
 
-test.only('findMostRelevantUpdate - refactor', (t) => {
+test('findMostRelevantUpdate - refactor -- custom', (t) => {
   const fakeCommits = [
     {
       message: 'more bugs in the code'
@@ -78,7 +78,7 @@ test.only('findMostRelevantUpdate - refactor', (t) => {
 })
 
 // perf
-test.only('findMostRelevantUpdate - perf', (t) => {
+test('findMostRelevantUpdate - perf', (t) => {
   const fakeCommits = [
     {
       message: 'more bugs in the code'
@@ -93,7 +93,7 @@ test.only('findMostRelevantUpdate - perf', (t) => {
   t.is(findMostRelevantUpdate(fakeCommits), 'patch')
 })
 
-test.only('findMostRelevantUpdate - perf', (t) => {
+test('findMostRelevantUpdate - perf -- custom', (t) => {
   const fakeCommits = [
     {
       message: 'more bugs in the code'
@@ -108,7 +108,7 @@ test.only('findMostRelevantUpdate - perf', (t) => {
   t.is(findMostRelevantUpdate(fakeCommits, { perf: 'minor' }), 'minor')
 })
 
-test.only('findMostRelevantUpdate - breaking', (t) => {
+test('findMostRelevantUpdate - breaking', (t) => {
   const fakeCommits = [
     {
       message: '\nintense commit\nbreaking change'
@@ -123,7 +123,7 @@ test.only('findMostRelevantUpdate - breaking', (t) => {
   t.is(findMostRelevantUpdate(fakeCommits), 'major')
 })
 
-test.only('findMostRelevantUpdate - breaking', (t) => {
+test('findMostRelevantUpdate - breaking', (t) => {
   const fakeCommits = [
     {
       message: '\nintense commit\nbreaking change'
@@ -140,7 +140,7 @@ test.only('findMostRelevantUpdate - breaking', (t) => {
   t.is(findMostRelevantUpdate(fakeCommits), 'major')
 })
 
-test.only('findMostRelevantUpdate - test', (t) => {
+test('findMostRelevantUpdate - test', (t) => {
   const fakeCommits = [
     {
       message: 'some poorly formatted commit message'
@@ -155,7 +155,7 @@ test.only('findMostRelevantUpdate - test', (t) => {
   t.is(findMostRelevantUpdate(fakeCommits), null)
 })
 
-test.only('findMostRelevantUpdate - test', (t) => {
+test('findMostRelevantUpdate - test -- custom', (t) => {
   const fakeCommits = [
     {
       message: 'some poorly formatted commit message'
@@ -170,7 +170,7 @@ test.only('findMostRelevantUpdate - test', (t) => {
   t.is(findMostRelevantUpdate(fakeCommits, { test: 'patch' }), 'patch')
 })
 
-test.only('findMostRelevantUpdate - test', (t) => {
+test('findMostRelevantUpdate - test -- custom', (t) => {
   const fakeCommits = [
     {
       message: 'some poorly formatted commit message'
@@ -185,7 +185,7 @@ test.only('findMostRelevantUpdate - test', (t) => {
   t.is(findMostRelevantUpdate(fakeCommits, { test: 'minor' }), 'minor')
 })
 
-test.only('findMostRelevantUpdate - chore', (t) => {
+test('findMostRelevantUpdate - chore', (t) => {
   const fakeCommits = [{
     message: 'chore(test): testing commit analyzer'
   }, {
@@ -199,7 +199,7 @@ test.only('findMostRelevantUpdate - chore', (t) => {
   t.is(findMostRelevantUpdate(fakeCommits), null)
 })
 
-test.only('findMostRelevantUpdate - style', (t) => {
+test('findMostRelevantUpdate - style', (t) => {
   const fakeCommits = [{
     message: 'testing commit analyzer'
   }, {
