@@ -1,6 +1,6 @@
 ## customizable-commit-analyzer
 [![Build Status](https://travis-ci.org/BublTechnology/customizable-commit-analyzer.svg?branch=master)](https://travis-ci.org/BublTechnology/customizable-commit-analyzer)
-[![npm version](https://badge.fury.io/js/%40bubltechnology%2Fcustomizable-commit-analyzer.svg)](https://badge.fury.io/js/%40bubltechnology%2Fcustomizable-commit-analyzer)
+[![npm version](https://badge.fury.io/js/@bubltechnology%2Fcustomizable-commit-analyzer.svg)](https://www.npmjs.com/package/@bubltechnology/customizable-commit-analyzer)
 
 NPM module for `analyzeCommits` option in [semantic-release](https://github.com/semantic-release/semantic-release). See [semantic-release plugins](https://github.com/semantic-release/semantic-release#plugins).
 
