@@ -212,3 +212,16 @@ test('findMostRelevantUpdate - style', (t) => {
 
   t.is(findMostRelevantUpdate(fakeCommits), null)
 })
+
+test('findMostRelevantUpdate - docs -- no scope', (t) => {
+  const fakeCommits = [
+    {
+      message: 'some poorly formatted commit message'
+    }, {
+      message: 'docs: something changed'
+    }, {
+      message: 'Merge Commit -- bad commit message'
+    }]
+
+  t.is(findMostRelevantUpdate(fakeCommits), 'patch')
+})
