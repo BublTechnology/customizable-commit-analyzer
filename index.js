@@ -1,6 +1,7 @@
 'use strict'
 
 const findMostRelevantUpdate = require('./lib/findMostRelevantUpdate')
+const getCommitTypeMap = require('./lib/typeMapFromPackage')().getCommitTypeMap
 const fs = require('fs')
 
 module.exports = (options, parserOpts, cb) => {
@@ -8,8 +9,9 @@ module.exports = (options, parserOpts, cb) => {
   try {
     packageJSON = JSON.parse(fs.readFileSync('./package.json'))
   } catch (e) {
-    console.warn('could not parse package.json')
+    throw new Error('customizable-commit-analyzer could not parse package.json')
   }
-  const commitTypeMap = packageJSON.config && packageJSON.config.commitTypeMap
+
+  const commitTypeMap = getCommitTypeMap(packageJSON)
   cb(null, findMostRelevantUpdate(parserOpts.commits, commitTypeMap))
 }
