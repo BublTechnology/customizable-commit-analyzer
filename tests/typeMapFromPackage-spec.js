@@ -2,8 +2,10 @@ const test = require('ava')
 const typeMapFromPackage = require('../lib/typeMapFromPackage')
 
 const fakeRequireFactory =
-  (packageName = '', mock = {}) =>
+  (pName, moc) =>
     (key) => {
+      const packageName = pName || ''
+      const mock = moc || {}
       if (key === packageName) {
         return mock
       }
