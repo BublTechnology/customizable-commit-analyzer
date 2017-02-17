@@ -4,7 +4,8 @@
   "description": "Customizable commit message analyzer for use with semantic-release",
   "main": "index.js",
   "scripts": {
-    "test": "ava tests/"
+    "test": "ava tests/",
+    "lint": "standard"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,8 @@
     "semver"
   ],
   "devDependencies": {
-    "ava": "^0.15.2"
+    "ava": "^0.15.2",
+    "standard": "^8.6.0"
   },
   "author": "Bubl Technology Ltd",
   "license": "Apache-2.0"
