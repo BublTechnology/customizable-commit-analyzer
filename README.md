@@ -29,7 +29,7 @@ test: null,
 chore: null
 ```
 
-But you can customize this in your `package.json`.
+But you can customize this, by defining an object right in your `package.json`.
 
 ```json
 {
@@ -39,6 +39,15 @@ But you can customize this in your `package.json`.
 }
 ```
 
+Or by specifying a package that exports a custom commit-type map object.
+
+```json
+{
+  "config": {
+    "commitTypeMap": "conventional-commit-type-map"
+  }
+}
+```
 
 ### License
 
